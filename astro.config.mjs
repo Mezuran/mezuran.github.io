@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://Mezuran.github.io',
-    base: '/Mezuran'
+    site: 'https://mezuran.github.io',
+    base: '/'
 });
