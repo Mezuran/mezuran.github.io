@@ -21,6 +21,8 @@
 
 - **Core expertise:** High-performance systems, real-time multiplayer networking, and building software that scales to thousands of concurrent users.
 
+### 🛠️ Tech Stack
+
 <div align="center">
 
 **Languages**
