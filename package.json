@@ -1,5 +1,5 @@
 {
-  "name": "Mezuran",
+  "name": "mizuran.github.io",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.15"
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/svelte": "^7.2.5",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.15",
+    "svelte": "^5.49.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
   }
 }

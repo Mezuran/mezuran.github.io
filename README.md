@@ -28,7 +28,6 @@ A high-performance, type-safe digital showcase built with the **Astro Islands ar
 /
 ├── src/
 │   ├── components/    # Reusable UI components
-│   ├── content/       # Type-checked Markdown files (Projects/Posts)
 │   ├── layouts/       # Base page wrappers
 │   ├── pages/         # File-based routing
 │   └── styles/        # Global CSS & Tailwind config
