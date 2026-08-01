@@ -1,0 +1,1 @@
+import{t as e}from"./i18n.KaRZGVaP.js";function t(){let e=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add(`revealed`)})},{threshold:.1,rootMargin:`0px 0px -50px 0px`});document.querySelectorAll(`.reveal, .reveal-left, .reveal-scale`).forEach(t=>{e.observe(t)})}e(),document.addEventListener(`astro:after-swap`,()=>{e(),t()}),t();

@@ -1,23 +1,79 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Khaizuran Athmarrullah | Full-Stack Web Developer & Game Developer',
+  description = 'Portfolio of Khaizuran (Kai) Athmarrullah — Full-Stack Web Developer and Game Developer based in Bandung, Indonesia, specializing in TypeScript, Supabase, and DevOps.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+import Navbar from '../components/Navbar.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Khaizuran Athmarrullah" />
+    <link rel="canonical" href={canonicalURL} />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Khaizuran Athmarrullah" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="bg-gray-50 text-gray-900 antialiased">
+    <div class="noise-overlay"></div>
+    <ScrollProgress />
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <script>
+      import { applyTranslations } from '../scripts/i18n';
+
+      function initReveal() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach((el) => {
+          observer.observe(el);
+        });
+      }
+
+      applyTranslations();
+      document.addEventListener('astro:after-swap', () => {
+        applyTranslations();
+        initReveal();
+      });
+
+      initReveal();
+    </script>
+  </body>
+</html>

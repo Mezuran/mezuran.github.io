@@ -1,80 +1,99 @@
-# 🚀 Mezuran | Personal Portfolio
+# Mezuran | Personal Portfolio
 
-A high-performance, type-safe digital showcase built with the **Astro Islands architecture**. This project serves as my professional hub, featuring my work in full-stack development, data science, and game engineering.
+A high-performance, type-safe digital showcase built with **Astro 5 Islands Architecture**. This project serves as my professional hub, featuring my work in full-stack development, DevOps, and game engineering.
 
-[View Live Site →](https://mezuran.github.io)
+[View Live Site](https://mezuran.github.io)
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
-- **Framework:** [Astro 4.0+](https://astro.build/) (Static Site Generation)
-- **Language:** [TypeScript](https://www.typescriptlang.org/) (Strictly Typed)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Content:** [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/) (Markdown-based project/blog management)
+- **Framework:** [Astro 5](https://astro.build/) (Static Site Generation)
+- **UI Islands:** [Svelte 5](https://svelte.dev/) (Typing animation)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Deployment:** GitHub Pages
 
-## ✨ Key Features
+## Key Features
 
-- **Blazing Fast:** Near-zero JavaScript baseline for incredible Lighthouse scores.
-- **Type-Safe:** End-to-end type safety across components and content schemas.
-- **Responsive Design:** Mobile-first approach optimized for all screen sizes.
-- **Dark Mode Support:** Smooth theme switching implemented with low-latency scripts.
-- **SEO Optimized:** Automated sitemap generation and OpenGraph meta tags.
+- **Blazing Fast:** Near-zero JavaScript baseline with isolated Svelte islands
+- **Type-Safe:** End-to-end TypeScript across components
+- **Responsive Design:** Mobile-first approach optimized for all screen sizes
+- **SEO Optimized:** OpenGraph meta tags, Twitter cards, canonical URLs
+- **i18n:** Client-side language switching (English, Indonesian, Chinese) via `?lang=` query param
+- **Animations:** Particle canvas, floating orbs, typing effect, scroll reveals, glassmorphism navbar
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 /
 ├── src/
-│   ├── components/    # Reusable UI components
-│   ├── layouts/       # Base page wrappers
-│   ├── pages/         # File-based routing
-│   └── styles/        # Global CSS & Tailwind config
-├── public/            # Static assets (fonts, icons)
-└── astro.config.mjs   # Astro configuration
-
+│   ├── components/       # UI components (Astro + Svelte)
+│   │   ├── Hero.astro          # Hero section with particles + typing
+│   │   ├── Navbar.astro        # Sticky glassmorphism navigation
+│   │   ├── About.astro         # Bio section
+│   │   ├── Skills.astro        # Bento grid skill cards
+│   │   ├── Experience.astro    # Work experience timeline
+│   │   ├── Education.astro     # Education history
+│   │   ├── Certifications.astro # Certifications list
+│   │   ├── Projects.astro      # Project showcase cards
+│   │   ├── GitHubActivity.astro # GitHub stats widget
+│   │   ├── Contact.astro       # Contact info + social links
+│   │   ├── LanguageSwitcher.astro # Language dropdown
+│   │   ├── ParticleBackground.astro # Canvas mesh particles
+│   │   ├── ScrollProgress.astro # Top progress bar
+│   │   └── TypingText.svelte    # Svelte typing animation
+│   ├── i18n/
+│   │   └── translations.ts     # EN/ID/ZH translation dictionaries
+│   ├── layouts/
+│   │   └── Layout.astro        # Base page layout
+│   ├── pages/
+│   │   └── index.astro         # Home page
+│   ├── scripts/
+│   │   └── i18n.ts             # Client-side i18n runtime
+│   └── styles/
+│       └── global.css          # Tailwind imports + animations
+├── public/                     # Static assets (favicon, fonts)
+└── astro.config.mjs            # Astro configuration
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) installed and [pnpm](https://pnpm.io/) (recommended) or npm.
+- [Node.js](https://nodejs.org/) 18+
+- [pnpm](https://pnpm.io/) (recommended)
 
 ### Installation
 
-1. **Clone the repo:**
 ```bash
-git clone [https://github.com/mezuran/mezuran.github.io.git](https://github.com/mezuran/mezuran.github.io.git)
-
-```
-
-
-2. **Install dependencies:**
-```bash
+git clone https://github.com/mezuran/mezuran.github.io.git
+cd mezuran.github.io
 pnpm install
-
 ```
 
+### Development
 
-3. **Start development server:**
 ```bash
-pnpm dev
-
+pnpm dev          # Start dev server at localhost:4321
+pnpm build        # Build static site to ./dist/
+pnpm preview      # Preview build locally
 ```
 
+## i18n
 
+Switch language via query parameter or navbar dropdown:
 
-## 📜 Commands
+- `/?lang=en` — English (default)
+- `/?lang=id` — Indonesian
+- `/?lang=zh` — Chinese
 
-| Command | Action |
-| --- | --- |
-| `pnpm dev` | Starts local dev server at `localhost:4321` |
-| `pnpm build` | Builds the static site to `./dist/` |
-| `pnpm preview` | Previews the build locally before deploying |
-| `pnpm astro check` | Runs diagnostics (Type-check & lint) |
+Translations are client-side: the page renders in English, then the `applyTranslations()` script swaps all `data-i18n` elements at runtime.
+
+## License
+
+MIT
 
 ---
 
-**Developed with ❤️ by Mezuran**
+**Developed by Khaizuran Athmarrullah**
