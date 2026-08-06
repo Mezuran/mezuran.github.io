@@ -10,6 +10,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.svg', Astro.site);
 
 import Navbar from '../components/Navbar.astro';
 import ScrollProgress from '../components/ScrollProgress.astro';
@@ -36,17 +37,27 @@ import SpeedInsights from '@vercel/speed-insights/astro';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Khaizuran Athmarrullah" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body class="bg-gray-50 text-gray-900 antialiased">
-    <div class="noise-overlay"></div>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gray-900 focus:text-white focus:rounded-lg"
+    >
+      Skip to content
+    </a>
+    <div class="noise-overlay" aria-hidden="true"></div>
     <ScrollProgress />
     <Navbar />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Analytics />

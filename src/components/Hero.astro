@@ -8,9 +8,9 @@ import ParticleBackground from './ParticleBackground.astro';
 
   <ParticleBackground />
 
-  <div class="floating-orb orb-1 absolute w-72 h-72 rounded-full opacity-20 blur-3xl"></div>
-  <div class="floating-orb orb-2 absolute w-96 h-96 rounded-full opacity-15 blur-3xl"></div>
-  <div class="floating-orb orb-3 absolute w-64 h-64 rounded-full opacity-10 blur-3xl"></div>
+  <div class="floating-orb orb-1 absolute w-72 h-72 rounded-full opacity-20 blur-3xl" aria-hidden="true"></div>
+  <div class="floating-orb orb-2 absolute w-96 h-96 rounded-full opacity-15 blur-3xl" aria-hidden="true"></div>
+  <div class="floating-orb orb-3 absolute w-64 h-64 rounded-full opacity-10 blur-3xl" aria-hidden="true"></div>
 
   <div class="max-w-3xl text-center relative z-10">
     <p class="text-lg text-gray-500 mb-2 hero-greeting" data-i18n="hero.greeting">Hi, I'm Kai 👋</p>
@@ -49,7 +49,7 @@ import ParticleBackground from './ParticleBackground.astro';
     </div>
   </div>
 
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+  <div class="bounce-arrow absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
     <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
     </svg>
