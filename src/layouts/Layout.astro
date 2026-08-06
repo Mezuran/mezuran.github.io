@@ -13,6 +13,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 import Navbar from '../components/Navbar.astro';
 import ScrollProgress from '../components/ScrollProgress.astro';
+import Analytics from '@vercel/analytics/astro';
 ---
 
 <!doctype html>
@@ -47,6 +48,7 @@ import ScrollProgress from '../components/ScrollProgress.astro';
     <main>
       <slot />
     </main>
+    <Analytics />
     <script>
       import { applyTranslations } from '../scripts/i18n';
 

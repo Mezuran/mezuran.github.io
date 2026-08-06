@@ -80,6 +80,13 @@ export const translationMap: Record<string, Record<Lang, string>> = {
   'contact.title': { en: "Let's talk", id: 'Mari bicara', zh: '聊聊吧' },
   'contact.location': { en: 'Bandung, West Java, Indonesia', id: 'Bandung, Jawa Barat, Indonesia', zh: '万隆，西爪哇，印度尼西亚' },
   'contact.email': { en: 'Email', id: 'Email', zh: '邮箱' },
+  'contact.formName': { en: 'Name', id: 'Nama', zh: '姓名' },
+  'contact.formNamePlaceholder': { en: 'Your name', id: 'Nama Anda', zh: '您的姓名' },
+  'contact.formEmail': { en: 'Email', id: 'Email', zh: '邮箱' },
+  'contact.formEmailPlaceholder': { en: 'you@example.com', id: 'anda@contoh.com', zh: 'you@example.com' },
+  'contact.formMessage': { en: 'Message', id: 'Pesan', zh: '消息' },
+  'contact.formMessagePlaceholder': { en: "What's on your mind?", id: 'Apa yang ingin Anda sampaikan?', zh: '您想说些什么？' },
+  'contact.formSend': { en: 'Send Message', id: 'Kirim Pesan', zh: '发送消息' },
 
   // Footer
   'footer': { en: 'Built with Astro.', id: 'Dibuat dengan Astro.', zh: '使用 Astro 构建。' },
