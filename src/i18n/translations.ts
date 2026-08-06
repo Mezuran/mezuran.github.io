@@ -14,9 +14,9 @@ export const translationMap: Record<string, Record<Lang, string>> = {
   'hero.greeting': { en: "Hi, I'm Kai 👋", id: 'Hai, saya Kai 👋', zh: '你好，我是 Kai 👋' },
   'hero.titlePrefix': { en: 'I build things for the', id: 'Saya membuat sesuatu untuk', zh: '我为以下平台构建东西' },
   'hero.subtitle': {
-    en: "I'm currently pursuing a Bachelor of Engineering in Informatics at Universitas Komputer Indonesia. I build web apps, tinker with DevOps infrastructure, and make games on the side.",
-    id: 'Saya sedang menempuh Sarjana Teknik Informatika di Universitas Komputer Indonesia. Saya membuat aplikasi web, bereksperimen dengan infrastruktur DevOps, dan membuat game di sampingnya.',
-    zh: '我目前在印度尼西亚计算机大学攻读工程信息学学士学位。我构建 Web 应用，钻研 DevOps 基础设施，还兼职做游戏。',
+    en: "Self-taught full-stack developer with 5 years of hands-on learning across web, game, and mobile stacks. I build web apps, tinker with DevOps infrastructure, and make games on the side.",
+    id: 'Full-stack developer otodidak dengan 5 tahun pengalaman praktis di web, game, dan mobile. Saya membuat aplikasi web, bereksperimen dengan infrastruktur DevOps, dan membuat game di sampingnya.',
+    zh: '自学全栈开发者，拥有 5 年 Web、游戏和移动端实战经验。我构建 Web 应用，钻研 DevOps 基础设施，还兼职做游戏。',
   },
   'hero.contactMe': { en: 'Contact Me', id: 'Hubungi Saya', zh: '联系我' },
   'hero.viewLinkedIn': { en: 'View LinkedIn', id: 'Lihat LinkedIn', zh: '查看 LinkedIn' },
@@ -24,9 +24,9 @@ export const translationMap: Record<string, Record<Lang, string>> = {
   // About
   'about.title': { en: 'About', id: 'Tentang', zh: '关于' },
   'about.p1': {
-    en: "My name is Khaizuran Rafie Athmarrullah, usually called Kai. I'm currently pursuing a bachelor's degree at Universitas Komputer Indonesia, and I previously worked at the Ministry of Public Works and Public Housing (PUPR) as a Server Operator, managing servers for an upcoming application.",
-    id: 'Nama saya Khaizuran Rafie Athmarrullah, biasa dipanggil Kai. Saya sedang menempuh gelar sarjana di Universitas Komputer Indonesia, dan sebelumnya saya bekerja di Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR) sebagai Operator Server, mengelola server untuk aplikasi yang akan datang.',
-    zh: '我叫 Khaizuran Rafie Athmarrullah，通常被叫作 Kai。我目前在印度尼西亚计算机大学攻读学士学位，之前在公共工程和公共住房部 (PUPR) 担任服务器运维，管理即将上线的应用服务器。',
+    en: "Self-taught full-stack developer with 5 years of hands-on, practice-driven learning across the web, game, and mobile stacks — from front-end frameworks and authentication to server deployment and DevOps. Comfortable working independently, picking up new tools quickly, and delivering working software end to end.",
+    id: 'Full-stack developer otodidak dengan 5 tahun pengalaman belajar praktis di web, game, dan mobile — dari framework front-end dan autentikasi hingga deployment server dan DevOps. Nyaman bekerja secara mandiri, cepat mempelajari tools baru, dan menghasilkan software yang berfungsi dari awal hingga akhir.',
+    zh: '自学全栈开发者，拥有 5 年 Web、游戏和移动端实战学习经验——从前端框架和身份验证到服务器部署和 DevOps。擅长独立工作，快速学习新工具，端到端交付可用软件。',
   },
   'about.p2': {
     en: 'I value comfort and flexibility in how I work. I can be a bit awkward meeting new people, but I get past that by just showing up and interacting consistently. I\'m not fixated on doing things at a "perfect" pace — I make up for it with results I\'m proud of.',
@@ -41,20 +41,20 @@ export const translationMap: Record<string, Record<Lang, string>> = {
   'experience.title': { en: 'Experience', id: 'Pengalaman', zh: '经验' },
   'experience.role': { en: 'DevOps Engineer', id: 'Insinyur DevOps', zh: 'DevOps 工程师' },
   'experience.company': { en: 'Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR)', id: 'Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR)', zh: '公共工程和公共住房部 (PUPR)' },
-  'experience.period': { en: 'Oct 2024 – Dec 2024 · 3 months', id: 'Okt 2024 – Des 2024 · 3 bulan', zh: '2024年10月 – 2024年12月 · 3个月' },
+  'experience.period': { en: 'Late Aug – Early Dec 2024', id: 'Akhir Ags – Awal Des 2024', zh: '2024年8月底 – 12月初' },
   'experience.location': { en: 'Central Jakarta, Indonesia', id: 'Jakarta Pusat, Indonesia', zh: '雅加达中部，印度尼西亚' },
-  'experience.bullet1': { en: 'Deployed a website using the NGINX web engine', id: 'Mendeploys website menggunakan web engine NGINX', zh: '使用 NGINX Web 引擎部署网站' },
-  'experience.bullet2': { en: 'Migrated a large volume of data from Excel into a DBMS', id: 'Migrasi data dalam jumlah besar dari Excel ke DBMS', zh: '将大量 Excel 数据迁移到数据库管理系统' },
-  'experience.bullet3': { en: 'Secured server access using SSH and a private VPN', id: 'Mengamankan akses server menggunakan SSH dan VPN privat', zh: '使用 SSH 和私有 VPN 保障服务器访问安全' },
-  'experience.bullet4': { en: 'Mirrored a GitHub repository to the production server', id: 'Mirror repository GitHub ke server produksi', zh: '将 GitHub 仓库镜像到生产服务器' },
+  'experience.bullet1': { en: 'Deployed a production website using the NGINX web server', id: 'Mendeploys website produksi menggunakan web server NGINX', zh: '使用 NGINX Web 服务器部署生产网站' },
+  'experience.bullet2': { en: 'Migrated a large volume of data from Excel spreadsheets into a relational DBMS', id: 'Migrasi data dalam jumlah besar dari spreadsheet Excel ke DBMS relasional', zh: '将大量 Excel 数据迁移到关系型数据库管理系统' },
+  'experience.bullet3': { en: 'Secured server access using SSH and a private VPN (Twingate)', id: 'Mengamankan akses server menggunakan SSH dan VPN privat (Twingate)', zh: '使用 SSH 和私有 VPN (Twingate) 保障服务器访问安全' },
+  'experience.bullet4': { en: 'Mirrored a GitHub repository to the production server for streamlined deployment', id: 'Mirror repository GitHub ke server produksi untuk deployment yang lebih efisien', zh: '将 GitHub 仓库镜像到生产服务器以优化部署流程' },
 
   // Education
   'education.title': { en: 'Education', id: 'Pendidikan', zh: '教育' },
-  'education.school': { en: 'Universitas Komputer Indonesia', id: 'Universitas Komputer Indonesia', zh: '印度尼西亚计算机大学' },
+  'education.school': { en: 'Universitas Komputer Indonesia (UNIKOM)', id: 'Universitas Komputer Indonesia (UNIKOM)', zh: '印度尼西亚计算机大学 (UNIKOM)' },
   'education.degree': {
-    en: 'Bachelor of Engineering (BE), Informatics — 2024–2028 (in progress)',
-    id: 'Sarjana Teknik (S.T.), Informatika — 2024–2028 (sedang berlangsung)',
-    zh: '工程学士 (B.E.), 信息学 — 2024–2028（在读）',
+    en: 'Bachelor of Engineering, Informatics — 2024–2028 (in progress)',
+    id: 'Sarjana Teknik, Informatika — 2024–2028 (sedang berlangsung)',
+    zh: '工程学士，信息学 — 2024–2028（在读）',
   },
 
   // Certifications
@@ -66,14 +66,19 @@ export const translationMap: Record<string, Record<Lang, string>> = {
   'projects.live': { en: 'Live', id: 'Live', zh: '在线' },
   'projects.deployedOn': { en: 'Deployed on', id: 'Dideploy di', zh: '部署于' },
   'projects.gorHamesDesc': {
-    en: 'Badminton court booking management system. Real-time scheduling and reservations.',
-    id: 'Sistem manajemen pemesanan lapangan bulu tangkis. Penjadwalan dan reservasi real-time.',
-    zh: '羽毛球馆预订管理系统。实时排班与预约。',
+    en: 'Badminton court booking & management system with real-time scheduling and reservations, used by venues nationwide across Indonesia.',
+    id: 'Sistem pemesanan & manajemen lapangan bulu tangkis dengan penjadwalan dan reservasi real-time, digunakan oleh venue di seluruh Indonesia.',
+    zh: '羽毛球馆预订与管理系统，支持实时排班与预约，已被印尼全国场馆使用。',
   },
   'projects.kasKelasDesc': {
-    en: 'Class treasury management app for tracking income, expenses, and balances.',
-    id: 'Aplikasi pengelolaan kas kelas untuk melacak pemasukan, pengeluaran, dan saldo.',
-    zh: '班级财务管理系统，用于追踪收支和余额。',
+    en: 'Class treasury management app for a single class, tracking income, expenses, and balances.',
+    id: 'Aplikasi pengelolaan kas kelas untuk satu kelas, melacak pemasukan, pengeluaran, dan saldo.',
+    zh: '班级财务管理系统，追踪收入、支出和余额。',
+  },
+  'projects.piringRasaDesc': {
+    en: 'A food discovery and recipe sharing platform.',
+    id: 'Platform pencarian makanan dan berbagi resep.',
+    zh: '美食发现与食谱分享平台。',
   },
 
   // Contact
