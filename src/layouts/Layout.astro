@@ -12,14 +12,38 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og-image.svg', Astro.site);
 
+const lang = Astro.url.searchParams.get('lang') || 'en';
+
 import Navbar from '../components/Navbar.astro';
 import ScrollProgress from '../components/ScrollProgress.astro';
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Khaizuran Athmarrullah",
+  "alternateName": "Kai",
+  "url": "https://mezuran.github.io",
+  "jobTitle": "Full-Stack Software Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bandung",
+    "addressCountry": "ID"
+  },
+  "sameAs": [
+    "https://github.com/Mezuran",
+    "https://linkedin.com/in/khaizuran"
+  ]
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,6 +53,7 @@ import SpeedInsights from '@vercel/speed-insights/astro';
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Khaizuran Athmarrullah" />
+    <meta name="theme-color" content="#030712" />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
@@ -46,8 +71,11 @@ import SpeedInsights from '@vercel/speed-insights/astro';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
-  <body class="bg-gray-50 text-gray-900 antialiased">
+  <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 antialiased">
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gray-900 focus:text-white focus:rounded-lg"
@@ -60,7 +88,7 @@ import SpeedInsights from '@vercel/speed-insights/astro';
     <main id="main-content">
       <slot />
     </main>
-    <footer class="py-8 text-center text-sm text-gray-400 border-t border-gray-200">
+    <footer class="py-8 text-center text-sm text-gray-400 dark:text-gray-500 border-t border-gray-200 dark:border-gray-800">
       &copy; {new Date().getFullYear()} Khaizuran Athmarrullah. <span data-i18n="footer">Built with Astro.</span>
     </footer>
     <Analytics />

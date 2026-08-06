@@ -11,7 +11,7 @@ export default defineConfig({
   site: 'https://mezuran.github.io',
   base: '/',
 
-  output: 'server',
+  output: 'static',
 
   vite: {
     plugins: [tailwindcss()]
