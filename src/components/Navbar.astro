@@ -12,7 +12,7 @@ const navLinks = [
 ---
 
 <nav class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
-  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
     <a href="/" class="font-bold text-lg tracking-tight hover:opacity-70 transition-opacity">
       kai<span class="text-gray-400">.</span>
     </a>
@@ -21,7 +21,7 @@ const navLinks = [
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors duration-200"
+          class="text-sm text-gray-400 hover:text-white transition-colors duration-200"
           data-i18n={link.key}
         >
           {link.key === 'nav.about' ? 'About' :
@@ -31,37 +31,13 @@ const navLinks = [
            link.key === 'nav.projects' ? 'Projects' : 'Contact'}
         </a>
       ))}
-      <button
-        id="theme-toggle"
-        class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-        aria-label="Toggle dark mode"
-      >
-        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-        <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-        </svg>
-      </button>
       <LanguageSwitcher />
     </div>
 
     <div class="flex items-center gap-3 md:hidden">
-      <button
-        id="theme-toggle-mobile"
-        class="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-        aria-label="Toggle dark mode"
-      >
-        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-        <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-        </svg>
-      </button>
       <LanguageSwitcher />
       <button
-        class="p-2 -mr-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+        class="p-2 -mr-2 text-gray-400 hover:text-white"
         id="menu-toggle"
         aria-label="Toggle menu"
         aria-expanded="false"
@@ -75,12 +51,12 @@ const navLinks = [
     </div>
   </div>
 
-  <div class="mobile-menu hidden md:hidden border-t border-gray-200/50 dark:border-gray-700/50" id="mobile-menu">
-    <div class="px-6 py-4 space-y-1">
+  <div class="mobile-menu hidden md:hidden border-t border-gray-800" id="mobile-menu">
+    <div class="px-4 py-4 space-y-1">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="block py-2 text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+          class="block py-2 text-sm text-gray-400 hover:text-white transition-colors"
           data-i18n={link.key}
         >
           {link.key === 'nav.about' ? 'About' :
@@ -95,29 +71,12 @@ const navLinks = [
 </nav>
 
 <script>
-  function initTheme() {
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (stored === 'dark' || (!stored && prefersDark)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }
-
-  function toggleTheme() {
-    const isDark = document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }
-
   function initNavbar() {
     const navbar = document.getElementById('navbar');
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuOpen = navbar?.querySelector('.menu-open');
     const menuClose = navbar?.querySelector('.menu-close');
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
     window.addEventListener('scroll', () => {
       const currentScroll = window.scrollY;
@@ -144,29 +103,17 @@ const navLinks = [
         menuClose?.classList.remove('hidden');
       });
     });
-
-    themeToggle?.addEventListener('click', toggleTheme);
-    themeToggleMobile?.addEventListener('click', toggleTheme);
   }
 
-  initTheme();
   initNavbar();
-  document.addEventListener('astro:after-swap', () => {
-    initTheme();
-    initNavbar();
-  });
+  document.addEventListener('astro:after-swap', initNavbar);
 </script>
 
 <style>
   .navbar-scrolled {
-    background: rgba(249, 250, 251, 0.8);
+    background: rgba(3, 7, 18, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  }
-
-  :global(.dark) .navbar-scrolled {
-    background: rgba(17, 24, 39, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 </style>

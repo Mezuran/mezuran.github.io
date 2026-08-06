@@ -8,7 +8,7 @@ const languages = [
 
 <div class="relative" id="lang-switcher">
   <button
-    class="px-2.5 py-1 text-xs font-medium text-gray-500 hover:text-gray-900 border border-gray-200 rounded-md hover:border-gray-400 transition-all duration-200"
+    class="px-2.5 py-1 text-xs font-medium text-gray-400 hover:text-white border border-gray-700 rounded-md hover:border-gray-500 transition-all duration-200"
     id="lang-btn"
     aria-label="Switch language"
     aria-expanded="false"
@@ -19,10 +19,10 @@ const languages = [
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
     </svg>
   </button>
-  <div class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg py-1 z-50 min-w-[60px]" id="lang-dropdown">
+  <div class="hidden absolute right-0 top-full mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg py-1 z-50 min-w-[60px]" id="lang-dropdown">
     {languages.map((l) => (
       <button
-        class="lang-option block w-full text-left px-3 py-1.5 text-xs text-gray-500 hover:bg-gray-50 transition-colors"
+        class="lang-option block w-full text-left px-3 py-1.5 text-xs text-gray-400 hover:bg-gray-700 hover:text-white transition-colors"
         data-lang={l.code}
         data-lang-btn={l.code}
       >
