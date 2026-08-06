@@ -60,6 +60,9 @@ import SpeedInsights from '@vercel/speed-insights/astro';
     <main id="main-content">
       <slot />
     </main>
+    <footer class="py-8 text-center text-sm text-gray-400 border-t border-gray-200">
+      &copy; {new Date().getFullYear()} Khaizuran Athmarrullah. <span data-i18n="footer">Built with Astro.</span>
+    </footer>
     <Analytics />
     <SpeedInsights />
     <script>

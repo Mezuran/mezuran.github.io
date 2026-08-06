@@ -18,6 +18,14 @@ export const POST: APIRoute = async ({ request }) => {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
   const message = formData.get('message') as string;
+  const website = formData.get('website') as string;
+
+  if (website) {
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 
   if (!name || !email || !message) {
     return new Response(JSON.stringify({ error: 'All fields are required.' }), {
